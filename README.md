@@ -18,7 +18,7 @@ This will create two files we will use at:
 1. `/tmp/retrain_tmp/output_graph.pb`     - Trained Machine Learning Model
 2. `/tmp/retrain_tmp/output_labels.txt`   - Labels for Images
 
-### Training a TensowFlow ML Model Based on Images in `./training_images/` Folder:
+### Training a TensowFlow ML Model Based on Images in `./training_images/` Folder ( tested on PNG files only ):
 
 ```
 python3 retrain.py --image_dir ./training_images/
