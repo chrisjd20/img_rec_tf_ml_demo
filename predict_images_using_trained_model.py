@@ -65,7 +65,7 @@ def main():
     # Can use queues and threading to spead up the processing
     q = queue.Queue()
     unknown_images_dir = 'unknown_images'
-    unknown_images = os.listdir('unknown_images')
+    unknown_images = os.listdir(unknown_images_dir)
     for image in unknown_images:
         img_full_path = '{}/{}'.format(unknown_images_dir, image)
         
