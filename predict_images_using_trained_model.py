@@ -66,6 +66,8 @@ def main():
     q = queue.Queue()
     unknown_images_dir = 'unknown_images'
     unknown_images = os.listdir(unknown_images_dir)
+    
+    #Going to interate over each of our images.
     for image in unknown_images:
         img_full_path = '{}/{}'.format(unknown_images_dir, image)
         
@@ -74,6 +76,7 @@ def main():
         while len(threading.enumerate()) > 10:
             time.sleep(0.0001)
 
+        #predict_image function is expecting png image bytes so we read image as 'rb' to get a bytes object
         image_bytes = open(img_full_path,'rb').read()
         threading.Thread(target=predict_image, args=(q, sess, graph, image_bytes, img_full_path, labels, input_operation, output_operation)).start()
     
@@ -81,7 +84,10 @@ def main():
     while q.qsize() < len(unknown_images):
         time.sleep(0.001)
     
+    #getting a list of all threads returned results
     prediction_results = [q.get() for x in range(q.qsize())]
+    
+    #do something with our results... Like print them to the screen.
     for prediction in prediction_results:
         print('TensorFlow Predicted {img_full_path} is a {prediction} with {percent:.2%} Accuracy'.format(**prediction))
 
