@@ -13,17 +13,17 @@ sudo python3 -m pip install --upgrade setuptools
 sudo python3 -m pip install --upgrade tensorflow==1.15
 ```
 
-This will create two files we will use at:
-
-1. `/tmp/retrain_tmp/output_graph.pb`     - Trained Machine Learning Model
-2. `/tmp/retrain_tmp/output_labels.txt`   - Labels for Images
-
 ### Training a TensowFlow ML Model Based on Images in `./training_images/` Folder ( tested on PNG files only ):
 
 ```
 python3 retrain.py --image_dir ./training_images/
 ```
 <sub><sup>`retrain.py` is a slightly modified version of https://raw.githubusercontent.com/tensorflow/hub/master/examples/image_retraining/retrain.py</sup></sub>
+
+This will create two files we will be using at:
+
+1. `/tmp/retrain_tmp/output_graph.pb`     - Trained Machine Learning Model
+2. `/tmp/retrain_tmp/output_labels.txt`   - Labels for Images
 
 ### Predicting Images in the `unknown_images` folder based on our trained Model:
 ```
