@@ -2,7 +2,7 @@
 
 ### Simple Demonstration to Train a Machine Learning Model to recognize Apples from Bananas
 
-### Installation (Tested on Ubuntu 18.04):
+### Installation (Tested on Ubuntu 18.04 - 8GB Memory - 4 core cpu VM):
 
 ```
 git clone https://github.com/chrisjd20/img_rec_tf_ml_demo.git
