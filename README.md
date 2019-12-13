@@ -11,6 +11,7 @@ sudo apt install python3 python3-pip -y
 sudo python3 -m pip install --upgrade pip
 sudo python3 -m pip install --upgrade setuptools
 sudo python3 -m pip install --upgrade tensorflow==1.15
+sudo python3 -m pip install tensorflow_hub              #this one may or may not be needed in order to run
 ```
 
 ### Training a TensowFlow ML Model Based on Images in `./training_images/` Folder ( tested on PNG files only ):
